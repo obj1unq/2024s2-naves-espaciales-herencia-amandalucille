@@ -48,7 +48,9 @@ class C inherits A{miAtributo ="c"}{
 
 class D inherits C(){
 	override method magia(){
-        	return super() + "CC"// llama al mismo mensaje (self) pero lo va a buscar 
+        	return super() + "CC"// llama al mismo mensaje (self) pero lo va a buscar al objeto padre. es para no repetir codigo pero agregando algo mas
 	}
 }
+
+// metodo abstracto. mensaje sin cuerpo para que una clase u objeto entienda un mensaje que en principio es de otro objeto
 
