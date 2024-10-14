@@ -1,0 +1,54 @@
+/*herencia
+mecanismo para no repetir codigo
+
+para aplicar a objetos que se comportan en parte igual en parte diferente
+*/
+class A {
+	const miAtributo = "x"
+	method magia(){
+		return "magia A" + "miAtrubuto"
+	}
+}
+
+class B inherits A{miAtributo="2"}{ 
+
+}
+
+la clase be entiende el mensaje de la clase A
+
+-tmb se pueden heredan atributos
+cuando mas objetos heredan de un mismo objeto:
+
+
+class B inherits A{miAtributo="z"}{ 
+	override method magia(){  // sobreescribe el metodo heredado 
+		return "magia B" + "miAtrubuto"
+	}
+}
+
+
+
+otro caso:
+
+class A {
+	const miAtributo = "x"
+	method magia(){
+		return "magia A" + "miAtrubuto"  + "self.masMagia()" //self es el recpeto del mensaje. si se lo llama desde C entonces self es C
+	}
+	method masMagia(){
+		return "masMagia A"
+	}
+}
+
+class C inherits A{miAtributo ="c"}{
+	override masMagia(){
+		return "masMagiaC"
+	}
+}
+
+class D inherits C(){
+	override method magia(){
+        	return super() + "CC"// llama al mismo mensaje (self) pero lo va a buscar 
+	}
+}
+
